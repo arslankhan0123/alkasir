@@ -40,3 +40,6 @@ ERROR - 2026-06-20 10:44:52 --> Severity: 8192 --> Creation of dynamic property 
 ERROR - 2026-06-20 16:14:52 --> Severity: 8192 --> Creation of dynamic property Login::$data is deprecated F:\Projects\alkasir\application\core\MY_Controller.php 83
 ERROR - 2026-06-20 16:14:52 --> Severity: 8192 --> abs(): Passing null to parameter #1 ($num) of type int|float is deprecated F:\Projects\alkasir\system\core\Common.php 405
 ERROR - 2026-06-20 16:14:52 --> Severity: Warning --> Cannot modify header information - headers already sent by (output started at F:\Projects\alkasir\system\core\Exceptions.php:271) F:\Projects\alkasir\system\core\Common.php 564
+ERROR - 2026-06-20 12:52:30 --> 404 Page Not Found: Theme/dist
+ERROR - 2026-06-20 12:52:30 --> 404 Page Not Found: Theme/dist
+ERROR - 2026-06-20 13:11:16 --> 404 Page Not Found: Theme/plugins
