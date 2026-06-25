@@ -12,3 +12,12 @@ ERROR - 2026-06-25 18:24:00 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-25 18:28:26 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-25 18:30:30 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-25 18:43:31 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 18:48:08 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 18:48:14 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 18:48:54 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 18:48:58 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 22:49:23 --> Severity: Notice --> Undefined variable: received_select F:\Projects\alkasir\application\views\quotation\quotation.php 160
+ERROR - 2026-06-25 18:49:24 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 22:49:48 --> Severity: Notice --> Undefined variable: received_select F:\Projects\alkasir\application\views\quotation\quotation.php 160
+ERROR - 2026-06-25 18:49:49 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-25 18:49:55 --> 404 Page Not Found: Theme/plugins
