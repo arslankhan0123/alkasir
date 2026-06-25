@@ -276,8 +276,8 @@
 <body class="hold-transition login-page custom-login">
 
   <!-- language -->
-  <input type="hidden" id="base_url" value="<?= base_url() ?>">
-  <?php $this->load->view('comman/language.php'); ?>
+  <!-- <input type="hidden" id="base_url" value="<?= base_url() ?>"> -->
+  <!-- <?php $this->load->view('comman/language.php'); ?> -->
   <!-- language end -->
 
   <div class="login-box">
