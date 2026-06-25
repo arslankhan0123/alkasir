@@ -78,6 +78,35 @@
       margin: 5% auto;
     }
 
+    .custom-login> .row {
+      position: relative;
+      z-index: 20;
+    }
+
+    .custom-login .language_id {
+      width: 285px;
+      height: 62px;
+      margin: 8px 15px !important;
+      padding: 0 18px;
+      color: var(--text-primary);
+      background-color: rgba(17, 24, 39, 0.92);
+      border: 1px solid rgba(244, 63, 94, 0.65);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .custom-login .language_id:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, .2), 0 10px 30px rgba(0, 0, 0, .25);
+    }
+
+    .custom-login .language_id option {
+      color: var(--text-primary);
+      background-color: #111827;
+    }
+
     /* Logo */
 
     /* Glass Card */

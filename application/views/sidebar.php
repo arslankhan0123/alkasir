@@ -15,20 +15,20 @@
 <?php 
     $CI =& get_instance();
   ?>
-<header class="main-header" style="background-color: #00ADEF !important;">
+<header class="main-header" style="background-color: #28ACE2 !important;">
 
     <!-- Logo -->
     <a href="<?php echo $base_url; ?>dashboard" class="logo">
       <span class="logo-mini"><b>POS</b></span>
       <!-- <span class="logo-lg"><b><?php  echo $SITE_TITLE;?></b></span> -->
       <span class="logo-lg">
-        <img src="<?php echo base_url() ?>theme/images/rapid.png" alt="Logo" style="height: 50px; width: auto;">
+        <img src="<?php echo base_url() ?>theme/images/logo.png" alt="Logo" style="height: 50px; width: auto;">
           <!--<b><?= $this->session->userdata('store_name'); ?></b>-->
       </span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" style="background-color: #00ADEF !important;" >
+    <nav class="navbar navbar-static-top" style="background-color: #28ACE2 !important;" >
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
@@ -201,7 +201,7 @@
         </div>
       </div> -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" style="background-color: #00ADEF !important;" >
+      <ul class="sidebar-menu" style="background-color: #28ACE2 !important;" >
         <!--<li class="header">MAIN NAVIGATION</li>-->
     <li class="dashboard-active-li "><a href="<?php echo $base_url; ?>dashboard"><i class="fa fa-dashboard text-aqua"></i> <span><?= $this->lang->line('dashboard'); ?></span></a></li>
     
