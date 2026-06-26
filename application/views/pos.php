@@ -310,13 +310,14 @@
                     <div class="col-sm-12" style="overflow-y:auto;height: 300px;border:1px solid #337ab7;" >
                       <table class="table table-condensed table-bordered  table-responsive items_table" style="">
                         <thead class="bg-gray">
-                          <th width="30%"><?= $this->lang->line('item_name'); ?></th>
+                          <th width="20%"><?= $this->lang->line('item_name'); ?></th>
+                          <th width="15%">Barcode</th>
                           <th width="10%"><?= $this->lang->line('stock'); ?></th>
-                          <th width="25%"><?= $this->lang->line('quantity'); ?></th>
-                          <th width="15%"><?= $this->lang->line('price'); ?></th>
+                          <th width="20%"><?= $this->lang->line('quantity'); ?></th>
+                          <th width="10%"><?= $this->lang->line('price'); ?></th>
                           <th width="10%"><?= $this->lang->line('discount'); ?>(<?=$CI->currency()?>)</th>
-                          <th width="10%"><?= $this->lang->line('tax'); ?></th>
-                          <th width="15%"><?= $this->lang->line('subtotal'); ?></th>
+                          <th width="5%"><?= $this->lang->line('tax'); ?></th>
+                          <th width="10%"><?= $this->lang->line('subtotal'); ?></th>
                           <th width="5%"><i class="fa fa-close"></i></th>
                         </thead>
                         <tbody id="pos-form-tbody" style="font-size: 16px;font-weight: bold;overflow: scroll;">
@@ -394,44 +395,37 @@
                   </div>
                 </div>
                
-               <div class="row">
-                
                   <?php if(isset($sales_id)){ $btn_id='update';$btn_name="Cash"; ?>
                     <input type="hidden" name="sales_id" id="sales_id" value="<?php echo $sales_id;?>"/>
                   <?php } else{ $btn_id='save';$btn_name="Cash";} ?>
-
                   <div class="col-md-12 text-right">
 
                     <div class="col-sm-3">
-                      <button type="button" id="hold_invoice" name="" class="btn bg-maroon btn-block btn-flat btn-lg btnhold" title="Hold Invoice [Alt+H]" style="">
+                      <button type="button" id="hold_invoice" name="" class="btn bg-maroon btn-block btn-lg btnhold" title="Hold Invoice [Alt+H]" style="border-radius: 20px !important;">
                       <i class="fa fa-hand-paper-o" aria-hidden="true"></i>
                        Hold
-                    </button>
+                     </button>
                     </div>
                     <div class="col-sm-3">
-                      <button type="button" id="" name="" class="btn btn-primary btnhold btn-block btn-flat btn-lg show_payments_modal" title="Multiple Payments [Alt+M]" style="">
+                      <button type="button" id="" name="" class="btn btn-primary btnhold btn-block btn-lg show_payments_modal" title="Multiple Payments [Alt+M]" style="border-radius: 20px !important;">
                             <i class="fa fa-credit-card" aria-hidden="true"></i>
                              Multiple
-                          </button>
+                           </button>
                     </div>
                     <div class="col-sm-3">
-                      <button type="button" id="<?php echo "show_cash_modal";?>" name="" class="btn btnhold btn-success btn-block btn-flat btn-lg Alt_c" title="By Cash & Save [Alt+C]" style="">
+                      <button type="button" id="<?php echo "show_cash_modal";?>" name="" class="btn btnhold btn-success btn-block btn-lg Alt_c" title="By Cash & Save [Alt+C]" style="border-radius: 20px !important;">
                             <i class="fa fa-money" aria-hidden="true"></i>
                              <?php echo $btn_name;?>
-                          </button>
+                           </button>
                     </div>
 
                     <div class="col-sm-3">
-                      <button type="button" id="pay_all" name="" class="btn bg-purple btnhold btn-block btn-flat btn-lg Alt_a" title="By Cash & Save [Alt+A]" style="">
+                      <button type="button" id="pay_all" name="" class="btn bg-purple btnhold btn-block btn-lg Alt_a" title="By Cash & Save [Alt+A]" style="border-radius: 20px !important;">
                             <i class="fa fa-money" aria-hidden="true"></i>
                              Pay All
-                          </button>
+                           </button>
                     </div>
-                    
-
-                          
                   </div>
-                </div>
               </div>
             </form>
           </div>
@@ -628,6 +622,7 @@
 
 
 
+
 //LEFT SIDE: ON CLICK ITEM ADD TO INVOICE LIST
 function addrow(id='',item_obj=''){
 
@@ -670,8 +665,11 @@ function addrow(id='',item_obj=''){
     var sub_total       =(to_Fixed(1)*to_Fixed(sales_price));//Initial
     var remove_btn      ='<a class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;" onclick="removerow('+rowcount+')" title="Delete Item?"></a>';
 
+    var custom_barcode = (item_obj=='') ? ($('#div_'+id).attr('data-custom-barcode') || '') : (item_obj.custom_barcode || '');
+
     var str=' <tr id="row_'+rowcount+'" data-row="0" data-item-id='+item_id+'>';/*item id*/
         str+='<td id="td_'+rowcount+'_0"><a data-toggle="tooltip" title="Click to Change Tax" class="pointer" id="td_data_'+rowcount+'_0" onclick="show_sales_item_modal('+rowcount+')">'+ item_name     +'</a> <i onclick="show_sales_item_modal('+rowcount+')" class="fa fa-edit pointer"></i></td>';/* td_0_0 item name*/ 
+        str+='<td id="td_'+rowcount+'_barcode">'+ custom_barcode +'</td>';
         str+='<td id="td_'+rowcount+'_1">'+ stock +'</td>';/* td_0_1 item available qty*/
         str+='<td id="td_'+rowcount+'_2">'+ quantity      +'</td>';/* td_0_2 item available qty*/
             info='<input id="sales_price_'+rowcount+'" onblur="set_to_original('+rowcount+','+item_cost+')" onkeyup="update_price('+rowcount+','+item_cost+')" name="sales_price_'+rowcount+'" type="text" class="form-control no-padding min_width" value="'+sales_price+'">';

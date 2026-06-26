@@ -34,6 +34,7 @@ class Pos_model extends CI_Model {
 	      				'discount_type' 		=> $res1->discount_type,
 	      				'discount' 				=> $res1->discount,
 	      				'service_bit' 			=> $res1->service_bit,
+	      				'custom_barcode' 		=> $res1->custom_barcode,
 	      );
 
 	      return json_encode($item_array);
@@ -142,8 +143,10 @@ class Pos_model extends CI_Model {
 	          				data-discount_type="'.$discount_type.'"
 	          				data-mrp="'.$item_mrp.'"
 	          				data-discount="'.$discount.'"
-	           				style="max-height: 150px;min-height: 150px;cursor: pointer;'.$bg_color.'">
-	           	<span class="label label-danger push-right" style="font-weight: bold;font-family: sans-serif;" data-toggle="tooltip" title="'.$label_title.'">'.$label.'</span>
+	          				data-custom-barcode="'.$res2->custom_barcode.'"
+	           				style="max-height: 150px;min-height: 150px;cursor: pointer;'.$bg_color.'">';
+
+	           	$table .= '<span class="label label-danger push-right" style="font-weight: bold;font-family: sans-serif;" data-toggle="tooltip" title="'.$label_title.'">'.$label.'</span>
 	          
 
 	            <div class="box-body box-profile">
@@ -681,6 +684,7 @@ class Pos_model extends CI_Model {
 		  		echo '<td id="td_'.$i.'_0">
 		  		<a data-toggle="tooltip" title="Click to Change Tax" class="pointer" id="td_data_'.$i.'_0" onclick="show_sales_item_modal('.$i.')">'.$q5->row()->item_name.'</a>
 		  		</td>';  /*td_0_0 item name*/
+		  		echo '<td id="td_'.$i.'_barcode">'.$q5->row()->custom_barcode.'</td>';
 		  		echo '<td id="td_'.$i.'_1">'.$stock.'</td>';  /*td_0_1 item available qty*/
 		  		echo '<td id="td_'.$i.'_2">'.$quantity.'</td>';    /*td_0_2 item available qty */
 
@@ -825,6 +829,7 @@ class Pos_model extends CI_Model {
 		  		echo '<td id="td_'.$i.'_0">
 		  		<a data-toggle="tooltip" title="Click to Change Tax" class="pointer" id="td_data_'.$i.'_0" onclick="show_sales_item_modal('.$i.')">'.$q5->row()->item_name.'</a>
 		  		</td>';  /*td_0_0 item name*/
+		  		echo '<td id="td_'.$i.'_barcode">'.$q5->row()->custom_barcode.'</td>';
 		  		echo '<td id="td_'.$i.'_1">'.$stock.'</td>';  /*td_0_1 item available qty*/
 		  		echo '<td id="td_'.$i.'_2">'.$quantity.'</td>';    /*td_0_2 item available qty */
 
