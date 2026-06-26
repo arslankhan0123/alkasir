@@ -907,7 +907,7 @@ class Sales_model extends CI_Model {
 							'item_discount_type' 		=> $res1->discount_type, 
 							'item_discount_input' 		=> $res1->discount, 
 							'service_bit' 				=> $res1->service_bit, 
-						
+							'custom_barcode' 			=> $res1->custom_barcode, 
 						);
 
 		$this->return_row_with_data($rowcount,$info);
@@ -937,6 +937,7 @@ class Sales_model extends CI_Model {
 							'item_discount_type' 		=> $res1->discount_type, 
 							'item_discount_input' 		=> $res1->discount_input, 
 							'service_bit' 				=> 1, 
+							'custom_barcode' 			=> $res2->custom_barcode, 
 						);
 
 			$result = $this->return_row_with_data($rowcount++,$info);
@@ -968,6 +969,7 @@ class Sales_model extends CI_Model {
 							'item_discount_type' 		=> $res1->discount_type, 
 							'item_discount_input' 		=> $res1->discount_input, 
 							'service_bit' 				=> $res2->service_bit, 
+							'custom_barcode' 			=> $res2->custom_barcode, 
 						);
 
 			$result = $this->return_row_with_data($rowcount++,$info);
@@ -978,6 +980,7 @@ class Sales_model extends CI_Model {
 	public function return_row_with_data($rowcount,$info){
 		extract($info);
 		$item_amount = ($item_sales_price * $item_sales_qty) + $item_tax_amt;
+		$custom_barcode = isset($custom_barcode) ? $custom_barcode : '';
 		?>
             <tr id="row_<?=$rowcount;?>" data-row='<?=$rowcount;?>'>
                <td id="td_<?=$rowcount;?>_1">
@@ -985,6 +988,10 @@ class Sales_model extends CI_Model {
                   <a id="td_data_<?=$rowcount;?>_1" href="javascript:void()" onclick="show_sales_item_modal(<?=$rowcount;?>)" title=""><?=$item_name;?></a> 
                   		<i onclick="show_sales_item_modal(<?=$rowcount;?>)" class="fa fa-edit pointer"></i>
                   	</label>
+               </td>
+
+               <td id="td_<?=$rowcount;?>_barcode">
+                  <span class='form-control text-center' style='height:auto; background:#eee;'><?=$custom_barcode;?></span>
                </td>
 
                <!-- description  -->
