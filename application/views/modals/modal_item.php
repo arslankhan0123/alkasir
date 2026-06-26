@@ -206,9 +206,9 @@
                           <div class="col-md-4">
                             <div class="box-body">
                               <div class="form-group">
-                                <label for="m_custom_barcode"><?= $this->lang->line('barcode'); ?></label>
+                                <label for="m_custom_barcode"><?= $this->lang->line('barcode'); ?><span class="text-danger">*</span></label>
                                 <span id="m_custom_barcode_msg" class="text-danger text-right pull-right"></span>
-                                <input type="text" class="form-control maxlength  " id="m_custom_barcode" name="m_custom_barcode" placeholder=""  >
+                                <input type="text" class="form-control maxlength  " id="m_custom_barcode" name="m_custom_barcode" placeholder="" required >
                               </div>
                             </div>
                           </div>

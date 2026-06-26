@@ -26,6 +26,7 @@ $(".add_item").click(function(e){
 	check_field("m_purchase_price");
 	check_field("m_tax_type");
 	check_field("m_sales_price");
+	check_field("m_custom_barcode");
 	
 	
     if(flag==false)

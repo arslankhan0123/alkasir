@@ -23,6 +23,7 @@ $('#save,#update').on("click",function (e) {
     var item_group = $("#item_group").val();
     //Validate Input box or selection box should not be blank or empty
 	check_field("item_name");
+	check_field("custom_barcode");
 	check_field("category_id");
 	check_field("unit_id");//units of measurments
 	//check_field("alert_qty");

@@ -56,3 +56,11 @@ ERROR - 2026-06-26 17:49:10 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 21:50:36 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
 ERROR - 2026-06-26 17:53:13 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 17:54:09 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 18:05:13 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 22:19:24 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:21:21 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:29:31 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:29:58 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:37:22 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:37:50 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 22:39:49 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
