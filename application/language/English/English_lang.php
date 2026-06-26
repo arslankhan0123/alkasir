@@ -949,6 +949,7 @@ $lang['payment_details'	] = "Payment Details";
 $lang['my_subscription_list'	] = "My Subscription List";	
 $lang['sign_in_message'	] = "Sign in to start your session";	
 $lang['sign_in'	] = "Sign In";	
+$lang['login_in'	] = "LOG IN";	
 $lang['register'	] = "Register";	
 $lang['forgot_password'	] = "Forgot Password";
 $lang['next'	] = "Next";

@@ -26,14 +26,18 @@
     <link rel="stylesheet" href="<?php echo $theme_link; ?>dist/css/AdminLTE.rtl.min.css">
   <?php } ?>
   <style>
+    body.login-page {
+      background: #DDE7FC !important;
+    }
+
     .login-logo-inside {
       text-align: center;
       margin-bottom: 25px;
     }
 
     .login-logo-inside img {
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       object-fit: contain;
       display: block;
       margin: 0 auto;
@@ -47,6 +51,80 @@
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
       padding: 30px;
+    }
+
+    .login-box {
+      width: 850px;
+    }
+
+    .login-box-body {
+      display: flex;
+      min-height: 400px;
+      /* Adjust as needed */
+      padding: 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      background: #fff;
+    }
+
+    /* Left Section - Rapid Logo */
+    .logo-section {
+      width: 40%;
+      background: #28ACE2;
+      /* Rapid Blue */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .logo-section img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Right Section - Login Form */
+    .form-section {
+      width: 60%;
+      background: #ffffff;
+      padding: 40px 30px;
+    }
+
+    .login-box-msg {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: #28ACE2;
+      border-color: #28ACE2;
+    }
+
+    .btn-primary:hover {
+      background: #1880cb;
+      border-color: #1880cb;
+    }
+
+    @media(max-width:768px) {
+      .login-box {
+        width: 95%;
+      }
+
+      .login-box-body {
+        flex-direction: column;
+      }
+
+      .logo-section,
+      .form-section {
+        width: 100%;
+      }
+
+      .logo-section {
+        min-height: 180px;
+      }
     }
   </style>
 </head>
@@ -62,46 +140,75 @@
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-      <div class="login-logo-inside">
-        <img src="<?php echo base_url(); ?>theme/images/logo.png" alt="Logo">
+
+      <!-- Left Section -->
+      <div class="logo-section">
+        <img src="<?php echo base_url(); ?>theme/images/logo.png" alt="Rapid Logo">
       </div>
 
-      <p class="login-box-msg"><?= $this->lang->line('sign_in_message'); ?></p>
+      <!-- Right Section -->
+      <div class="form-section">
 
-      <div class="text-danger tex-center"><?php echo $this->session->flashdata('failed'); ?></div>
-      <div class="text-success tex-center"><?php echo $this->session->flashdata('success'); ?></div>
+        <p class="login-box-msg">
+          <?= $this->lang->line('sign_in_message'); ?>
+        </p>
 
-
-      <form id="login-form" action="<?php echo $base_url; ?>login/verify" method="post">
-        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="Email" id="email" name="email" autofocus><span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        <div class="text-danger tex-center">
+          <?php echo $this->session->flashdata('failed'); ?>
         </div>
-        <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" id="pass" name="pass">
-          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+        <div class="text-success tex-center">
+          <?php echo $this->session->flashdata('success'); ?>
         </div>
-        <div class="row">
-          <div class="col-xs-12">
-            <button type="submit" class="btn btn-primary btn-block btn-flat"><?= $this->lang->line('sign_in'); ?></button>
+
+        <form id="login-form" action="<?php echo $base_url; ?>login/verify" method="post">
+
+          <input type="hidden"
+            name="<?php echo $this->security->get_csrf_token_name(); ?>"
+            value="<?php echo $this->security->get_csrf_hash(); ?>">
+
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control"
+              placeholder="Email" id="email" name="email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
-        </div>
-        <div class="row">
-          <?php if (store_module()) { ?>
-            <div class="col-xs-6 "><br>
-              <a href="<?= base_url('register') ?>"><?= $this->lang->line('register'); ?></a>
+
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control"
+              placeholder="Password" id="pass" name="pass">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+
+          <div class="row" style="margin-bottom: 10px;">
+            <div class="col-xs-6">
+              <label style="font-weight:normal; cursor:pointer;">
+                  <input type="checkbox" name="remember_me" value="1">
+                  Remember Me
+              </label>
+          </div>
+            <div class="col-xs-6 text-right">
+              <a href="<?= base_url('login/forgot_password') ?>">
+                <?= $this->lang->line('forgot_password'); ?>
+              </a>
             </div>
-          <?php } ?>
-          <div class="col-xs-6 text-right pull-right"><br>
-            <a href="<?= base_url('login/forgot_password') ?>"><?= $this->lang->line('forgot_password'); ?></a>
+            <?php if (store_module()) { ?>
+              <div class="col-xs-6">
+                <a href="<?= base_url('register') ?>">
+                  <?= $this->lang->line('register'); ?>
+                </a>
+              </div>
+            <?php } ?>
           </div>
-        </div>
-      </form>
-      <!--<div class="row">-->
-      <!--  <div class="col-md-12 text-center">-->
-      <!--    <p style='font-style: italic;'>Version <?= app_version(); ?></p>   -->
-      <!--  </div>-->
-      <!--</div>-->
+
+          <button type="submit"
+            class="btn btn-primary btn-block btn-flat mt-2">
+            <?= $this->lang->line('login_in'); ?>
+          </button>
+
+        </form>
+
+      </div>
+
     </div>
     <!-- /.login-box-body -->
     <?php if (demo_app()) { ?>

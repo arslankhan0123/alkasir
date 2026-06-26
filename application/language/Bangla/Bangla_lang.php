@@ -941,6 +941,7 @@ $lang['payment_details' ] = "পেমেন্টের বিবরণ";
 $lang['my_subscription_list' ] = "আমার সাবস্ক্রিপশন তালিকা";
 $lang['sign_in_message' ] = "আপনার সেশন শুরু করতে সাইন ইন করুন";
 $lang['sign_in' ] = "সাইন ইন";
+$lang['login_in'] = "লগইন";
 $lang['register' ] = "রেজিস্টার";
 $lang['forgot_password' ] = "পাসওয়ার্ড ভুলে গেছি";
 $lang['next'] = "পরবর্তী";

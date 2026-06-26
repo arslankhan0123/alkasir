@@ -952,6 +952,7 @@ $lang['payment_details'	] = "بيانات الدفع";
 $lang['my_subscription_list'	] = "قائمة اشتراكي";	
 $lang['sign_in_message'	] = "تسجيل الدخول لبدء الجلسة الخاصة بك";	
 $lang['sign_in'	] = "تسجيل الدخول";	
+$lang['login_in'	] = "تسجيل الدخول";	
 $lang['register'	] = "يسجل";	
 $lang['forgot_password'	] = "هل نسيت كلمة السر";
 $lang['next'	] = "التالي";
