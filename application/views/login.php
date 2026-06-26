@@ -72,11 +72,12 @@
     .logo-section {
       width: 40%;
       background: #28ACE2;
-      /* Rapid Blue */
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 30px;
+      text-align: center;
     }
 
     .logo-section img {
@@ -101,6 +102,7 @@
     .btn-primary {
       background: #28ACE2;
       border-color: #28ACE2;
+      border-radius: 15px !important;
     }
 
     .btn-primary:hover {
@@ -126,6 +128,42 @@
         min-height: 180px;
       }
     }
+
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #28ACE2;
+      font-size: 16px;
+      z-index: 10;
+    }
+
+    .password-toggle:hover {
+      color: #1880cb;
+    }
+
+    .welcome_back {
+      margin-bottom: 0px !important;
+      padding: 0 0 0 0;
+    }
+
+    .login-box-msg {
+      color: #28ACE2;
+    }
+
+    .erp-title {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
   </style>
 </head>
 
@@ -144,11 +182,16 @@
       <!-- Left Section -->
       <div class="logo-section">
         <img src="<?php echo base_url(); ?>theme/images/logo.png" alt="Rapid Logo">
+
+        <h1 class="erp-title">ERP</h1>
       </div>
 
       <!-- Right Section -->
       <div class="form-section">
 
+        <p class="login-box-msg welcome_back">
+          <?= $this->lang->line('welcome_back'); ?>
+        </p>
         <p class="login-box-msg">
           <?= $this->lang->line('sign_in_message'); ?>
         </p>
@@ -173,19 +216,24 @@
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
 
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control"
-              placeholder="Password" id="pass" name="pass">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <div class="form-group has-feedback password-wrapper">
+            <input type="password"
+              class="form-control"
+              placeholder="Password"
+              id="pass"
+              name="pass">
+
+            <span id="togglePassword"
+              class="fa fa-eye password-toggle"></span>
           </div>
 
           <div class="row" style="margin-bottom: 10px;">
             <div class="col-xs-6">
               <label style="font-weight:normal; cursor:pointer;">
-                  <input type="checkbox" name="remember_me" value="1">
-                  Remember Me
+                <input type="checkbox" name="remember_me" value="1">
+                Remember Me
               </label>
-          </div>
+            </div>
             <div class="col-xs-6 text-right">
               <a href="<?= base_url('login/forgot_password') ?>">
                 <?= $this->lang->line('forgot_password'); ?>
@@ -265,6 +313,19 @@
       $("input[name='email']").val("admin@example.com");
       $("input[name='pass']").val("123456");
       $("#login-form").submit();
+    });
+  </script>
+  <script>
+    $('#togglePassword').on('click', function() {
+      let passwordField = $('#pass');
+
+      if (passwordField.attr('type') === 'password') {
+        passwordField.attr('type', 'text');
+        $(this).removeClass('fa-eye').addClass('fa-eye-slash');
+      } else {
+        passwordField.attr('type', 'password');
+        $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+      }
     });
   </script>
 </body>

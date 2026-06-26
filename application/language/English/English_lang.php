@@ -948,6 +948,7 @@ $lang['package_count'	] = "Package Count";
 $lang['payment_details'	] = "Payment Details";	
 $lang['my_subscription_list'	] = "My Subscription List";	
 $lang['sign_in_message'	] = "Sign in to start your session";	
+$lang['welcome_back'	] = "WELCOME BACK";	
 $lang['sign_in'	] = "Sign In";	
 $lang['login_in'	] = "LOG IN";	
 $lang['register'	] = "Register";	

@@ -951,6 +951,7 @@ $lang['package_count'	] = "عدد العبوات";
 $lang['payment_details'	] = "بيانات الدفع";	
 $lang['my_subscription_list'	] = "قائمة اشتراكي";	
 $lang['sign_in_message'	] = "تسجيل الدخول لبدء الجلسة الخاصة بك";	
+$lang['welcome_back'] = "مرحبًا بعودتك";
 $lang['sign_in'	] = "تسجيل الدخول";	
 $lang['login_in'	] = "تسجيل الدخول";	
 $lang['register'	] = "يسجل";	

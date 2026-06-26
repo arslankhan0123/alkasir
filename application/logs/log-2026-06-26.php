@@ -41,3 +41,18 @@ ERROR - 2026-06-26 16:16:40 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 16:17:33 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 16:17:43 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 16:20:16 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:39:01 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:39:39 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:40:04 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:40:24 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:41:05 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:41:11 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:41:36 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:44:17 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:48:14 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:48:57 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:49:02 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:49:10 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 21:50:36 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
+ERROR - 2026-06-26 17:53:13 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 17:54:09 --> 404 Page Not Found: Theme/plugins
