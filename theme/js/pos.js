@@ -468,6 +468,7 @@ function get_item_details(item_id){
     console.log(result);
     var item = jQuery.parseJSON(result);
 
+
     var obj = {};
     obj['item_id']        = item['id'];
     obj['item_name']      = item['item_name'];
@@ -482,6 +483,7 @@ function get_item_details(item_id){
     obj['discount_type']  = item['discount_type'];
     obj['discount']       = item['discount'];
     obj['service_bit']    = item['service_bit'];
+    obj['custom_barcode'] = item['custom_barcode'];
     addrow(null,obj);
     $(".overlay").remove();
   });
