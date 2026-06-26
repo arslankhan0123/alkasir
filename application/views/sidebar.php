@@ -9,7 +9,17 @@
   }
 </script>
 <!-- end -->
+<style>
+  .btn-flat{
+    background: #28ACE2;
+    color: white !important;
+  }
 
+  .btn-flat:hover{
+    background: #00acd6;
+    color: white !important;
+  }
+</style>
 
 
 <?php
@@ -112,7 +122,7 @@ $CI = &get_instance();
 
         <!-- User Account Menu -->
 
-        <li class="dropdown tasks-menu">
+        <!-- <li class="dropdown tasks-menu">
           <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" title="App Language" data-toggle='tooltip'>
             <i class="fa fa-language "></i>
             <?= $this->session->userdata('language'); ?>
@@ -137,7 +147,7 @@ $CI = &get_instance();
               </ul>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         <?php if (!is_user() && $CI->permissions('sales_add')) { ?>
           <li class="text-center" id="">
@@ -188,6 +198,14 @@ $CI = &get_instance();
 <style>
   .skin-blue .sidebar a {
     color: #fff !important;
+  }
+
+  .sidebar-menu>li>a {
+    font-size: 16px;
+  }
+
+  .sidebar-menu .treeview-menu>li>a {
+    font-size: 15px;
   }
 
   .skin-blue .sidebar-menu>li>.treeview-menu {

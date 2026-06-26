@@ -273,7 +273,7 @@ select[readonly].select2 + .select2-container {
 
 /*************************ASKARALI CSS 19-JUNE-2021*********************************/
 .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
-    background-color: #00283b;
+    background-color: #28ACE2;
 }
 .skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
     color: #fff;
@@ -299,7 +299,7 @@ select[readonly].select2 + .select2-container {
     border-bottom: 0 solid transparent;
 }
 .skin-blue .main-header li.user-header {
-    background-color: #06296e;
+    background-color: #28ACE2;
 }
 /*BACKGROUND COLORS ON DASHBOARD */
 /*.bg-1 {background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);color: #fff;}

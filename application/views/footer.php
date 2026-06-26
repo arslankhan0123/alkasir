@@ -1,8 +1,8 @@
 <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b><?php  echo $SITE_TITLE;?> -v<?= $VERSION;?></b> 
+    <div style="color: white;" class="pull-right hidden-xs">
+      <b><?php  echo $SITE_TITLE;?> 2026</b> 
     </div>
-    <strong>Copyright &copy; <?=date("Y")?> All rights reserved.</strong>
+    <strong style="color: white;">Copyright &copy; <?=date("Y")?> All rights reserved.</strong>
   </footer>
   <!-- Control Sidebar -->
   
