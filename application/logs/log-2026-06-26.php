@@ -69,3 +69,6 @@ ERROR - 2026-06-26 18:47:50 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 18:58:08 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-06-26 22:58:25 --> Severity: Notice --> Undefined variable: tax_id F:\Projects\alkasir\application\views\items.php 331
 ERROR - 2026-06-26 18:59:16 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 19:06:30 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 19:14:26 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-06-26 19:15:31 --> 404 Page Not Found: Theme/plugins
