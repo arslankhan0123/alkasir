@@ -109,7 +109,7 @@ class Pos_model extends CI_Model {
 	        	if($w_stock <1 && !$service_bit){
 	        		$str="zero_stock()";
 	        		$disabled='';
-	        		$bg_color="background-color:#9d9999";
+	        		$bg_color="background-color:#28ACE2";
 	        	}
 	        	else{
 	        		$str="addrow($res2->id)";
