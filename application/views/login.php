@@ -26,9 +26,9 @@
     <link rel="stylesheet" href="<?php echo $theme_link; ?>dist/css/AdminLTE.rtl.min.css">
   <?php } ?>
   <style>
-    body.login-page {
+    /* body.login-page {
       background: #DDE7FC !important;
-    }
+    } */
 
     .login-logo-inside {
       text-align: center;
@@ -59,7 +59,7 @@
 
     .login-box-body {
       display: flex;
-      min-height: 400px;
+      min-height: 450px;
       /* Adjust as needed */
       padding: 0;
       border-radius: 22px;
@@ -70,7 +70,7 @@
 
     /* Left Section - Rapid Logo */
     .logo-section {
-      width: 40%;
+      width: 50%;
       background: #28ACE2;
       display: flex;
       flex-direction: column;
@@ -87,7 +87,7 @@
 
     /* Right Section - Login Form */
     .form-section {
-      width: 60%;
+      width: 50%;
       background: #ffffff;
       padding: 40px 30px;
     }
@@ -160,7 +160,7 @@
     .erp-title {
       margin-top: 20px;
       color: #fff;
-      font-size: 42px;
+      font-size: 100px;
       font-weight: 700;
       letter-spacing: 3px;
     }

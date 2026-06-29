@@ -983,15 +983,15 @@ class Sales_model extends CI_Model {
 		$custom_barcode = isset($custom_barcode) ? $custom_barcode : '';
 		?>
             <tr id="row_<?=$rowcount;?>" data-row='<?=$rowcount;?>'>
+               <td id="td_<?=$rowcount;?>_barcode">
+                  <span class='form-control text-center' style='height:auto; background:#eee;'><?=$custom_barcode;?></span>
+               </td>
+
                <td id="td_<?=$rowcount;?>_1">
                   <label class='form-control' style='height:auto;' data-toggle="tooltip" title='Edit ?' >
                   <a id="td_data_<?=$rowcount;?>_1" href="javascript:void()" onclick="show_sales_item_modal(<?=$rowcount;?>)" title=""><?=$item_name;?></a> 
                   		<i onclick="show_sales_item_modal(<?=$rowcount;?>)" class="fa fa-edit pointer"></i>
                   	</label>
-               </td>
-
-               <td id="td_<?=$rowcount;?>_barcode">
-                  <span class='form-control text-center' style='height:auto; background:#eee;'><?=$custom_barcode;?></span>
                </td>
 
                <!-- description  -->

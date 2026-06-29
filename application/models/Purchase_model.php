@@ -679,6 +679,7 @@ class Purchase_model extends CI_Model {
 							'item_discount_type' 		=> 'Percentage', 
 							'item_discount_input' 		=> 0, 
 							'service_bit' 				=> $res1->service_bit, 
+							'custom_barcode' 			=> $res1->custom_barcode, 
 						);
 
 		$this->return_row_with_data($rowcount,$info);
@@ -710,6 +711,7 @@ class Purchase_model extends CI_Model {
 							'item_discount_type' 		=> $res1->discount_type, 
 							'item_discount_input' 		=> $res1->discount_input, 
 							'service_bit' 				=> $res2->service_bit, 
+							'custom_barcode' 			=> $res2->custom_barcode, 
 						);
 
 			$result = $this->return_row_with_data($rowcount++,$info);
@@ -723,8 +725,12 @@ class Purchase_model extends CI_Model {
 		$item_unit_cost = $item_purchase_price+$item_tax_amt;
 		$item_amount = $item_unit_cost * $item_purchase_qty;
 	
+		$custom_barcode = isset($custom_barcode) ? $custom_barcode : '';
 		?>
             <tr id="row_<?=$rowcount;?>" data-row='<?=$rowcount;?>'>
+               <td id="td_<?=$rowcount;?>_barcode">
+                  <span class='form-control text-center' style='height:auto; background:#eee;'><?=$custom_barcode;?></span>
+               </td>
                <td id="td_<?=$rowcount;?>_1">
                   <label class='form-control' style='height:auto;' data-toggle="tooltip" title='Edit ?' >
                   <a id="td_data_<?=$rowcount;?>_1" href="javascript:void()" onclick="show_purchase_item_modal(<?=$rowcount;?>)" title=""><?=$item_name;?></a> 

@@ -310,8 +310,8 @@
                     <div class="col-sm-12" style="overflow-y:auto;height: 300px;border:1px solid #337ab7;" >
                       <table class="table table-condensed table-bordered  table-responsive items_table" style="">
                         <thead class="bg-gray">
-                          <th width="20%"><?= $this->lang->line('item_name'); ?></th>
                           <th width="15%">Barcode</th>
+                          <th width="20%"><?= $this->lang->line('item_name'); ?></th>
                           <th width="10%"><?= $this->lang->line('stock'); ?></th>
                           <th width="20%"><?= $this->lang->line('quantity'); ?></th>
                           <th width="10%"><?= $this->lang->line('price'); ?></th>
@@ -668,8 +668,8 @@ function addrow(id='',item_obj=''){
     var custom_barcode = (item_obj=='') ? ($('#div_'+id).attr('data-custom-barcode') || '') : (item_obj.custom_barcode || '');
 
     var str=' <tr id="row_'+rowcount+'" data-row="0" data-item-id='+item_id+'>';/*item id*/
-        str+='<td id="td_'+rowcount+'_0"><a data-toggle="tooltip" title="Click to Change Tax" class="pointer" id="td_data_'+rowcount+'_0" onclick="show_sales_item_modal('+rowcount+')">'+ item_name     +'</a> <i onclick="show_sales_item_modal('+rowcount+')" class="fa fa-edit pointer"></i></td>';/* td_0_0 item name*/ 
         str+='<td id="td_'+rowcount+'_barcode">'+ custom_barcode +'</td>';
+        str+='<td id="td_'+rowcount+'_0"><a data-toggle="tooltip" title="Click to Change Tax" class="pointer" id="td_data_'+rowcount+'_0" onclick="show_sales_item_modal('+rowcount+')">'+ item_name     +'</a> <i onclick="show_sales_item_modal('+rowcount+')" class="fa fa-edit pointer"></i></td>';/* td_0_0 item name*/
         str+='<td id="td_'+rowcount+'_1">'+ stock +'</td>';/* td_0_1 item available qty*/
         str+='<td id="td_'+rowcount+'_2">'+ quantity      +'</td>';/* td_0_2 item available qty*/
             info='<input id="sales_price_'+rowcount+'" onblur="set_to_original('+rowcount+','+item_cost+')" onkeyup="update_price('+rowcount+','+item_cost+')" name="sales_price_'+rowcount+'" type="text" class="form-control no-padding min_width" value="'+sales_price+'">';

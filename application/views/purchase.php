@@ -175,6 +175,7 @@
                                         <table class="table table-hover table-bordered" style="width:100%" id="purchase_table">
                                              <thead class="custom_thead">
                                                 <tr class="bg-primary" >
+                                                   <th rowspan='2' style="width:10%">Barcode</th>
                                                    <th rowspan='2' style="width:15%"><?= $this->lang->line('item_name'); ?></th>
                                                    <th rowspan='2' style="width:15%;min-width: 180px;"><?= $this->lang->line('quantity'); ?></th>
                                                    <th rowspan='2' style="width:10%"><?= $this->lang->line('purchase_price'); ?>(<?=$CURRENCY;?>)</th>

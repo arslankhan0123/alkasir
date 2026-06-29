@@ -29,7 +29,7 @@ $CI = &get_instance();
 
   <!-- Logo -->
   <a href="<?php echo $base_url; ?>dashboard" class="logo">
-    <span class="logo-mini"><b>POS</b></span>
+    <span class="logo-mini"><b>R</b></span>
     <!-- <span class="logo-lg"><b><?php echo $SITE_TITLE; ?></b></span> -->
     <span class="logo-lg">
       <img src="<?php echo base_url() ?>theme/images/logo.png" alt="Logo" style="height: 50px; width: auto;">
