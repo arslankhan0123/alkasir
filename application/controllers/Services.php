@@ -19,12 +19,13 @@ class Services extends MY_Controller {
 
 	public function newservices(){
 		$this->form_validation->set_rules('item_name', 'Item Name', 'trim|required');
+		$this->form_validation->set_rules('custom_barcode', 'Barcode', 'trim|required');
 		$this->form_validation->set_rules('category_id', 'Category Name', 'trim|required');
 		$this->form_validation->set_rules('price', 'Item Price', 'trim|required');
 		$this->form_validation->set_rules('tax_id', 'Tax', 'trim|required');
 		$this->form_validation->set_rules('purchase_price', 'Purchase Price', 'trim|required');
 		$this->form_validation->set_rules('sales_price', 'Sales Price', 'trim|required');
-
+ 
 		
 		if ($this->form_validation->run() == TRUE) {
 			$result=$this->services->verify_and_save();
@@ -45,6 +46,7 @@ class Services extends MY_Controller {
 	}
 	public function update_services(){
 		$this->form_validation->set_rules('item_name', 'Item Name', 'trim|required');
+		$this->form_validation->set_rules('custom_barcode', 'Barcode', 'trim|required');
 		$this->form_validation->set_rules('category_id', 'Category Name', 'trim|required');
 		$this->form_validation->set_rules('price', 'Item Price', 'trim|required');
 		$this->form_validation->set_rules('tax_id', 'Tax', 'trim|required');

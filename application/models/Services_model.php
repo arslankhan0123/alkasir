@@ -110,7 +110,7 @@ class Services_model extends CI_Model {
 		if ($query1){
 				
 				
-				$this->db->query("update db_items set expire_date=null where expire_date='0000-00-00'");
+				$this->db->query("update db_items set expire_date=null where CAST(expire_date AS CHAR) = '0000-00-00'");
 				$this->db->trans_commit();
 				$this->session->set_flashdata('success', 'Success!! New Service Added Successfully!');
 		        return "success";
@@ -214,7 +214,7 @@ class Services_model extends CI_Model {
 
 			
 			if ($query1){
-				   $this->db->query("update db_items set expire_date=null where expire_date='0000-00-00'");
+				   $this->db->query("update db_items set expire_date=null where CAST(expire_date AS CHAR) = '0000-00-00'");
 				   $this->db->trans_commit();
 				   $this->session->set_flashdata('success', 'Success!! Service Item Updated Successfully!');
 			        return "success";

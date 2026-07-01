@@ -458,7 +458,7 @@ class Import extends MY_Controller {
                         $this->db->trans_rollback();
                         echo 'failed';
                     }else{
-                        $this->db->query("update db_items set expire_date=null where expire_date='0000-00-00'");
+                        $this->db->query("update db_items set expire_date=null where CAST(expire_date AS CHAR) = '0000-00-00'");
                         $this->db->trans_commit();
                         echo "success";
                         $this->session->set_flashdata('success', 'Success!! items Data Imported Successfully!');
@@ -640,7 +640,7 @@ public function services(){
                         $this->db->trans_rollback();
                         echo 'failed';
                     }else{
-                        $this->db->query("update db_items set expire_date=null where expire_date='0000-00-00'");
+                        $this->db->query("update db_items set expire_date=null where CAST(expire_date AS CHAR) = '0000-00-00'");
                         $this->db->trans_commit();
                         echo "success";
                         $this->session->set_flashdata('success', 'Success!! Services Data Imported Successfully!');
