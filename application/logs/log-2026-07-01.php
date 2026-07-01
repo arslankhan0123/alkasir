@@ -40,3 +40,15 @@ ERROR - 2026-07-01 11:58:08 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-07-01 11:58:16 --> 404 Page Not Found: Theme/plugins
 ERROR - 2026-07-01 15:59:51 --> Severity: Notice --> Undefined variable: cName F:\Projects\alkasir\application\views\colors.php 54
 ERROR - 2026-07-01 15:59:51 --> Severity: Notice --> Undefined variable: cDetails F:\Projects\alkasir\application\views\colors.php 61
+ERROR - 2026-07-01 12:04:27 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 12:04:36 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 12:04:40 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 12:04:45 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 12:04:53 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 16:04:56 --> Severity: Notice --> Undefined variable: sName F:\Projects\alkasir\application\views\sizes.php 54
+ERROR - 2026-07-01 16:04:56 --> Severity: Notice --> Undefined variable: sDetails F:\Projects\alkasir\application\views\sizes.php 61
+ERROR - 2026-07-01 12:04:57 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 16:09:03 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
+ERROR - 2026-07-01 16:09:03 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
+ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
+ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58

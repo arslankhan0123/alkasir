@@ -9,8 +9,8 @@
       <div class="wrapper">
         <?php include"sidebar.php"; ?>
         <?php
-        if(!isset($category_name)){
-          $category_code=$category_name=$description=$store_id="";
+        if(!isset($cName)){
+          $cName=$cDetails=$store_id="";
           }
         ?>
          <!-- Content Wrapper. Contains page content -->
