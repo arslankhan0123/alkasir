@@ -10,7 +10,7 @@
         <?php include"sidebar.php"; ?>
         <?php
         if(!isset($bsName)){
-          $bsCode=$bsName=$bsDetails=$store_id="";
+          $bsCode=$bsName=$bsDetails=$store_id=$bnid="";
           }
         ?>
          <!-- Content Wrapper. Contains page content -->

@@ -52,3 +52,4 @@ ERROR - 2026-07-01 16:09:03 --> Severity: Notice --> Undefined variable: bnid F:
 ERROR - 2026-07-01 16:09:03 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
 ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
 ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
+ERROR - 2026-07-01 12:21:10 --> 404 Page Not Found: Theme/plugins
