@@ -53,3 +53,9 @@ ERROR - 2026-07-01 16:09:03 --> Severity: Notice --> Undefined variable: bnid F:
 ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
 ERROR - 2026-07-01 16:09:19 --> Severity: Notice --> Undefined variable: bnid F:\Projects\alkasir\application\views\binsub.php 58
 ERROR - 2026-07-01 12:21:10 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 17:51:54 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-01 17:52:17 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 18:11:43 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 18:12:37 --> 404 Page Not Found: Theme/plugins
+ERROR - 2026-07-01 22:13:09 --> Could not find the language line "company_address"
+ERROR - 2026-07-01 22:13:54 --> Could not find the language line "company_address"

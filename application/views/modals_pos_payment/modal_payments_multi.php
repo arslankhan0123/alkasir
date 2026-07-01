@@ -29,6 +29,7 @@
           
             <div class="box-body">
               <div class="row">
+                 <?php /* ADVANCE SECTION - COMMENTED OUT
                  <div class="col-md-4">
                   <span for="">
                     <label>
@@ -41,6 +42,7 @@
                     </label>
                   </div>
                  </div>
+                 */ ?>
 
                  <div class="col-md-8">
                   <span for="">
