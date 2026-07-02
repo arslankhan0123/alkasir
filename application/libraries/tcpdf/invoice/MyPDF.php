@@ -57,7 +57,7 @@ class MyPDF extends TCPDF {
 
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct('L', 'mm', 'A3');
         //Do your magic here
 
         $this->CI =& get_instance();
@@ -270,18 +270,19 @@ class MyPDF extends TCPDF {
 
         // Static AL KASIR header - centered across page width, logo stays on left
         $this->setFont($this->get_font_name(), '', 14, '', true);
+        $pageWidth = $this->getPageWidth();
 
         $txt = '<span style="font-size:22px;font-weight:bold;">AL KASIR</span>';
-        $this->writeHTMLCell($w =210, $h='', $x=0, $y='14', $txt, $border = 0, 0, 0, true, 'C', true);
+        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='14', $txt, $border = 0, 0, 0, true, 'C', true);
 
         $txt = '<span style="font-size:13px;font-weight:bold;">MOBILE PHONE &amp; COMPUTER TR. LLC SP</span>';
-        $this->writeHTMLCell($w =210, $h='', $x=0, $y='21', $txt, $border = 0, 0, 0, true, 'C', true);
+        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='21', $txt, $border = 0, 0, 0, true, 'C', true);
 
         $txt = '<span style="font-size:12px;">Al Majaz-2, Jamal Abdul Nasser Street, SharJah, UAE</span>';
-        $this->writeHTMLCell($w =210, $h='', $x=0, $y='27', $txt, $border = 0, 0, 0, true, 'C', true);
+        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='27', $txt, $border = 0, 0, 0, true, 'C', true);
 
         $txt = '<span style="font-size:12px;">Mob.: 055 617 3300, 056 477 2300</span>';
-        $this->writeHTMLCell($w =210, $h='', $x=0, $y='32', $txt, $border = 0, 0, 0, true, 'C', true);
+        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='32', $txt, $border = 0, 0, 0, true, 'C', true);
 
         return $this;
     }

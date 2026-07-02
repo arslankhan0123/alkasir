@@ -39,7 +39,7 @@ class Sales extends MyPDF{
 	    $state = (!empty($customer->state_id)) ? get_state_details($customer->state_id) : '';
 	    $customer_state_name = (!empty($state)) ? $state->state : $store->state;
 
-        $w = 100;
+        $w = ($this->getPageWidth() - 12) / 2;
         $h = 40;
 
         $custmer_details = '<span style="color:rgb(65, 59, 212);font-style:italic;">'.$this->CI->lang->line('bill_to').'</span>';
@@ -63,7 +63,7 @@ class Sales extends MyPDF{
     {
     	$sales = $this->sales;//array()
 
-        $w = 100;
+        $w = ($this->getPageWidth() - 12) / 2;
         $h = 40;
         $invoice_details = "";
         $invoice_details = '<span style="color:rgb(65, 59, 212);font-style:italic;">'.$this->CI->lang->line('invoice_details').'</span>';
@@ -72,13 +72,13 @@ class Sales extends MyPDF{
         $invoice_details .= '<br><b>'.$this->CI->lang->line('due_date').' :</b> <span style="">'.((!empty($sales->due_date)) ? show_date($sales->due_date):'').'</span>';
         $invoice_details .= '<br><b>'.$this->CI->lang->line('reference_no').' :</b> <span style="">'.$sales->reference_no.'</span>';
 
-        $this->writeHTMLCell($w, $h, $x ='104', $y='', $invoice_details, 1, 1, 1, true, 'J', true);
+        $this->writeHTMLCell($w, $h, $x = (6 + $w), $y='', $invoice_details, 1, 1, 1, true, 'J', true);
         return $this;
     }
 
     public function _get_shipping_address()
     {
-        $w = 100;
+        $w = ($this->getPageWidth() - 12) / 2;
         $h = 40;
 
         $customer = $this->customer;//array()
@@ -120,13 +120,13 @@ class Sales extends MyPDF{
     public function _get_bank_details()
     {
     	$store = $this->store;
-        $w = 100;
+        $w = ($this->getPageWidth() - 12) / 2;
         $h = 40;
         $invoice_details = "";
         $invoice_details = '<span style="color:rgb(65, 59, 212);font-style:italic;">'.$this->CI->lang->line("bank_details").'</span><br>';
         $invoice_details .= nl2br($store->bank_details);
 
-        $this->writeHTMLCell($w, $h, $x ='104', $y='', $invoice_details, 1, 1, 1, true, 'J', true);
+        $this->writeHTMLCell($w, $h, $x = (6 + $w), $y='', $invoice_details, 1, 1, 1, true, 'J', true);
         return $this;
     }
 

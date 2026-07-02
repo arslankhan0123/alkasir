@@ -50,7 +50,9 @@ class GstInvoice extends MyPDF{
 	    $state = (!empty($customer->state_id)) ? get_state_details($customer->state_id) : '';
 	    $this->customer_state_name = (!empty($state)) ? $state->state : $store->state;
 
-        $w = 147;
+        $pageWidth = $this->getPageWidth();
+        $printableWidth = $pageWidth - 12;
+        $w = $printableWidth * 0.74;
         $h = 25;
         
         $titleHTML = "";
@@ -82,7 +84,7 @@ class GstInvoice extends MyPDF{
         
         $custmer_details .= '<b>:</b><span style="font-size:12px;"> '.nl2br(substr($customer->address,0,56))."</span><br/>";
         
-        $this->writeHTMLCell($w,6,$x = '90', $y = '82', substr($customer->address,56,300),0,0,0, true,'J', true);
+        $this->writeHTMLCell($w * 0.4, 6, $x = 6 + ($w * 0.6), $y = '82', substr($customer->address,56,300),0,0,0, true,'J', true);
         // print_r($customer_details);
         
         $custmer_details .= $customer->id!=2?"<b>:</b><span style='font-size:12px;'> $customer->tax_number </span><br/>": '<b>:</b><br/>';
@@ -93,7 +95,7 @@ class GstInvoice extends MyPDF{
         $this->setFont($this->get_font_name(), '', 9);
         $this->setFillColor(255, 255, 255);
 
-        $this->writeHTMLCell($w, $h, $x ='23', $y='70', $custmer_details, [
+        $this->writeHTMLCell($w - 17, $h, $x ='23', $y='70', $custmer_details, [
             'R' => ['width' => 0.1, 'color' => [204,204,204]],
             'T' => ['width' => 0.1, 'color' => [204,204,204]],
             'B' => ['width' => 0.1, 'color' => [204,204,204]],
@@ -109,7 +111,11 @@ class GstInvoice extends MyPDF{
     	$customer = $this->customer;
     // 	print_r($customer);
     	
-        $w = 52;
+        $pageWidth = $this->getPageWidth();
+        $printableWidth = $pageWidth - 12;
+        $w_customer = $printableWidth * 0.74;
+        $w_invoice = $printableWidth * 0.26;
+        $w = $w_invoice;
         $h = 25;
         
         $payment = $this->CI->db->from('db_salespayments')
@@ -121,7 +127,7 @@ class GstInvoice extends MyPDF{
         if(!empty($payment)){
             $inv_type = $payment->payment_type;
         }
- 
+  
         $titleHTML = "";
         $titleHTML .= '<b>'.$this->CI->lang->line('invoice_no').'</b><br/>';
         
@@ -133,7 +139,7 @@ class GstInvoice extends MyPDF{
         $titleHTML .= '<b>Reference</b>';
         
 
-        $this->writeHTMLCell($w, $h, $x ='151', $y='', $titleHTML, [
+        $this->writeHTMLCell($w, $h, $x = 6 + $w_customer, $y='', $titleHTML, [
             'R' => ['width' => 0.1,'color' => [204,204,204]],
             'T' => ['width' => 0.1,'color' => [204,204,204]],
             'B' => ['width' => 0.1,'color' => [204,204,204]],
@@ -160,7 +166,7 @@ class GstInvoice extends MyPDF{
         $invoice_details .= '<b>:</b> <span style="font-size:12px;">'.$sales->reference_no.'</span>';
         
 
-        $this->writeHTMLCell(28, $h, $x ='173', $y='70', $invoice_details, [
+        $this->writeHTMLCell($w * 0.56, $h, $x = 6 + $w_customer + ($w * 0.44), $y='70', $invoice_details, [
             'R' => ['width' => 0.1,'color' => [204,204,204]],
             'T' => ['width' => 0.1,'color' => [204,204,204]],
             'B' => ['width' => 0.1,'color' => [204,204,204]],
@@ -229,7 +235,8 @@ class GstInvoice extends MyPDF{
     public function _get_invoice_title_name()
     {
 
-        $w = 198;
+        $pageWidth = $this->getPageWidth();
+        $w = $pageWidth - 12;
         $h = 15;
         
         $html = "";

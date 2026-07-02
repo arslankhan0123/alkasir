@@ -27,3 +27,8 @@ FROM `db_purchase`
 WHERE `supplier_id` IS NULL
 AND `purchase_date` < `IS` `NULL`
 ERROR - 2026-07-02 11:42:13 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-02 11:51:44 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-02 11:53:29 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-02 17:03:28 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-02 18:05:26 --> 404 Page Not Found: Faviconico/index
+ERROR - 2026-07-02 18:05:26 --> 404 Page Not Found: Faviconico/index
