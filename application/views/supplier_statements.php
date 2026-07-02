@@ -33,15 +33,15 @@
                   <!-- <form class="form-horizontal" id="report-form" onkeypress="return event.keyCode != 13;"> -->
                   <form class="form-horizontal" action="<?php echo base_url() ?>reports/supplier_statements" method="get">
                     <div class="box-body">
-                      <?php $supplier = $this->db->select("*")->FROM('db_suppliers')->get()->result(); ?>
+                      <?php $suppliers_list = $this->db->select("*")->FROM('db_suppliers')->get()->result(); ?>
                       
                       <div class="form-group">
                         <label for="customer_id" class="col-sm-2 control-label">Select Supplier</label>
                         <div class="col-sm-3">
                           <select class="form-control select2" name="supid" id="supid" required >
                           <option value="">Select One</option>
-                          <?php foreach($supplier as $value){ ?>
-                          <option value="<?php echo $value->id; ?>"><?php echo $value->supplier_name; ?></option>
+                          <?php foreach($suppliers_list as $value){ ?>
+                          <option value="<?php echo $value->id; ?>" <?php echo (isset($_GET['supid']) && $_GET['supid'] == $value->id) ? 'selected' : ''; ?>><?php echo $value->supplier_name; ?></option>
                           <?php } ?>
                         </select>
                         </div>
@@ -53,7 +53,7 @@
                             <div class="input-group-addon">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right datepicker" id="from_date" name="from_date" value="<?php echo show_date(date('d-m-Y'));?>" required >
+                            <input type="text" class="form-control pull-right datepicker" id="from_date" name="from_date" value="<?php echo $psdate ?? show_date(date('d-m-Y'));?>" required >
                           </div>
                           <span id="Sales_date_msg" style="display:none" class="text-danger"></span>
                         </div>
@@ -63,7 +63,7 @@
                             <div class="input-group-addon">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <input type="text" class="form-control pull-right datepicker" id="to_date" name="to_date" value="<?php echo show_date(date('d-m-Y'))?>" required >
+                            <input type="text" class="form-control pull-right datepicker" id="to_date" name="to_date" value="<?php echo $pedate ?? show_date(date('d-m-Y'))?>" required >
                           </div>
                           <span id="Sales_date_msg" style="display:none" class="text-danger"></span>
                         </div>
@@ -172,7 +172,7 @@
                         $saprod = $this->db->select("SUM(grand_total) as total,SUM(paid_amount) as ptotal")
                                           ->FROM('db_purchase')
                                           ->where('supplier_id',$supplier->id)
-                                          ->where('purchase_date <=',$value->sales_date)
+                                          ->where('purchase_date <=',$value->purchase_date)
                                           ->get()
                                           ->row();
                         //var_dump($saprod); exit();
@@ -188,7 +188,7 @@
                         $puprod = $this->db->select("SUM(payment) as total")
                                           ->FROM('db_sobpayments')
                                           ->where('supplier_id',$supplier->id)
-                                          ->where('payment_date <=',$value->sales_date)
+                                          ->where('payment_date <=',$value->purchase_date)
                                           ->get()
                                           ->row();
                         if($puprod)
@@ -208,7 +208,7 @@
                         $cvpay = $this->db->select("SUM(payment) as total")
                                           ->FROM('db_supplier_payments')
                                           ->where('supplier_id',$supplier->id)
-                                          ->where('payment_date <=',$value->sales_date)
+                                          ->where('payment_date <=',$value->purchase_date)
                                           ->get()
                                           ->row();
                         if($cvpay)
@@ -226,9 +226,9 @@
                           }
                         ?>
                         <tr class="gradeX">
-                          <td class="hidden"><?php echo date('Ymd',strtotime($value->sales_date)); ?></td>
-                          <td><?php echo $value->sales_code; ?></td>
-                          <td><?php echo date('d-m-Y',strtotime($value->sales_date)); ?></td>
+                          <td class="hidden"><?php echo date('Ymd',strtotime($value->purchase_date)); ?></td>
+                          <td><?php echo $value->purchase_code; ?></td>
+                          <td><?php echo date('d-m-Y',strtotime($value->purchase_date)); ?></td>
                           <td><?php echo 'Invoice'; ?></td>
                           <td><?php echo number_format($value->grand_total, 2); $tsa += $value->grand_total; ?></td> 
                           <td><?php echo number_format($value->paid_amount, 2); $tsp += $value->paid_amount; ?></td>

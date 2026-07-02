@@ -333,6 +333,8 @@ public function supplier_statements()
     //var_dump($sdate);var_dump($edate);var_dump($custid); exit();
     $data['sdate'] = $sdate;
     $data['edate'] = $edate;
+    $data['psdate'] = $_GET['from_date'];
+    $data['pedate'] = $_GET['to_date'];
 
     $data['company'] = $this->reports->company_details();
     $data['supplier'] = $this->reports->purchases_supplier_data($supid);
