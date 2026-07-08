@@ -296,6 +296,10 @@
                                  <label for="item_image"><?= $this->lang->line('select_image'); ?></label>
                                  <input type="file" name="item_image" id="item_image">
                                  <span id="item_image_msg" style="display:block;" class="text-danger">Max Width/Height: 1000px * 1000px & Size: 1MB </span>
+                                 <div id="image_preview_container" style="display:none; margin-top:10px; position:relative; width:100px;">
+                                    <img id="image_preview" src="" alt="Preview" style="width:100px; height:100px; object-fit:cover; border:1px solid #ccc; border-radius:5px;">
+                                    <span id="remove_image" style="position:absolute; top:-10px; right:-10px; background:red; color:white; border-radius:50%; width:20px; height:20px; text-align:center; cursor:pointer; line-height:18px; font-weight:bold;" title="Remove image">&times;</span>
+                                 </div>
                               </div>
                               
                               
@@ -593,6 +597,30 @@
               });
             });
           });
+      </script>
+      <script type="text/javascript" >
+        $(document).ready(function(){
+            $('#item_image').change(function(){
+                var file = this.files[0];
+                if(file){
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        $('#image_preview').attr('src', e.target.result);
+                        $('#image_preview_container').show();
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    $('#image_preview_container').hide();
+                    $('#image_preview').attr('src', '');
+                }
+            });
+
+            $('#remove_image').click(function(){
+                $('#item_image').val('');
+                $('#image_preview_container').hide();
+                $('#image_preview').attr('src', '');
+            });
+        });
       </script>
       <!-- Make sidebar menu hughlighter/selector -->
       <script>$(".<?php echo basename(__FILE__,'.php');?>-active-li").addClass("active");</script>
