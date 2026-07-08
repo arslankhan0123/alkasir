@@ -837,9 +837,10 @@
   }
 
   function get_price_level_price($customer_id,$price){
+    if(empty($customer_id)) return $price;
     $CI =& get_instance();
     $q1=$CI->db->select("price_level_type,price_level")->where("store_id",get_current_store_id())->where("id",$customer_id)->get("db_customers")->row();
-    if($q1->price_level!=0){
+    if($q1 && $q1->price_level!=0){
       return ($q1->price_level_type=='Increase') ? $price + ($price*$q1->price_level)/100 : $price - ($price*$q1->price_level)/100;
     }
     else{
