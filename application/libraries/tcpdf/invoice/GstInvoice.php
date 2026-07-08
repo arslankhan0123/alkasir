@@ -240,7 +240,7 @@ class GstInvoice extends MyPDF{
         $h = 15;
         
         $html = "";
-        $html = "<div><span style='font-weight:bold;font-size:50px;'><b>TAX INVOICE</b></span><br/><span>TRN: 100219031000003</span></div>";
+        $html = "<div><span style='font-weight:bold;font-size:50px;'><b>TAX INVOICE</b></span><br/><span>TRN: " . $this->store->vat_no . "</span></div>";
         
         $this->setCellMargins(1,1,1,1);
         $this->setCellPaddings(2,1,1,1);

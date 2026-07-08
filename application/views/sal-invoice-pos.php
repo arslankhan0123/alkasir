@@ -202,7 +202,7 @@
                     <strong style="font-size: 11px;">MOBILE PHONE &amp; COMPUTER TR. LLC SP</strong><br>
                     <span style="font-weight: normal;">Al Majaz-2, Jamal Abdul Nasser Street, SharJah, UAE</span><br>
                     <span style="font-weight: normal;">Mob.: 055 617 3300, 056 477 2300</span><br>
-                    <span style="font-weight: normal;">TRN: 100219031000003</span><br>
+                    <span style="font-weight: normal;">TRN: <?= $company_vat_number ?></span><br>
                     <hr>
                     <strong style="display: inline-block; margin-bottom: 6px;">TAX INVOICE</strong>
 

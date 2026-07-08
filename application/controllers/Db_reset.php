@@ -84,9 +84,25 @@ class Db_reset extends CI_Controller {
         // Re-enable foreign key checks
         $this->db->query("SET FOREIGN_KEY_CHECKS = 1;");
 
+        // Re-seed the System warehouse for every store (required for Sales, POS, Stock etc.)
+        $stores = $this->db->select('id')->get('db_store')->result();
+        $created_date = date("Y-m-d");
+        $warehouse_seeded = 0;
+        foreach ($stores as $store) {
+            $existing = $this->db->where('store_id', $store->id)->where('warehouse_type', 'System')->get('db_warehouse')->num_rows();
+            if ($existing == 0) {
+                $this->db->query("INSERT INTO db_warehouse(store_id, warehouse_type, warehouse_name, mobile, email, status, created_date)
+                                  VALUES({$store->id}, 'System', 'System Warehouse', '', '', 1, '$created_date')");
+                $warehouse_seeded++;
+            }
+        }
+
         echo "</ul>";
         echo "<hr>";
         echo "<h3 style='color: #5cb85c;'>Database Reset Completed! Successfully cleared $cleared_count tables.</h3>";
+        if ($warehouse_seeded > 0) {
+            echo "<p style='color: #337ab7;'><strong>&#10003; System Warehouse re-created</strong> for $warehouse_seeded store(s) to restore normal operation.</p>";
+        }
         echo "<p><a href='" . base_url() . "' style='display: inline-block; padding: 10px 15px; color: #fff; background-color: #337ab7; text-decoration: none; border-radius: 4px;'>Go to Dashboard</a></p>";
         echo "</div>";
     }

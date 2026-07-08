@@ -424,7 +424,8 @@
   }
   function get_store_warehouse_id(){
     $CI =& get_instance();
-    return $CI->db->select('id')->where('store_id',get_current_store_id())->where('warehouse_type','System')->get('db_warehouse')->row()->id;
+    $row = $CI->db->select('id')->where('store_id',get_current_store_id())->where('warehouse_type','System')->get('db_warehouse')->row();
+    return ($row) ? $row->id : null;
   }
   /*end*/
   function get_only_init_code($value,$store_id=''){

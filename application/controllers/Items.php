@@ -219,6 +219,7 @@ public function get_sub_bin_data()
 
 			
 			$row[] = format_qty(total_available_qty_items_of_warehouse($warehouse_ids,null,$items->id))." $str";
+			$row[] = format_qty($items->opening_stock);
 
 			$row[] = $items->alert_qty;
 			$row[] = store_number_format($items->sales_price);

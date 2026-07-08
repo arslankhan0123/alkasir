@@ -121,6 +121,7 @@
                   <th><?= $this->lang->line('category'); ?>/<br><?= $this->lang->line('item_type'); ?></th>
                   <th><?= $this->lang->line('unit'); ?></th>
                   <th><?= $this->lang->line('stock'); ?></th>
+                  <th>Opening Stock</th>
                   <th><?= $this->lang->line('alert_quantity'); ?></th>
                   <th><?= $this->lang->line('sales_price'); ?></th>
                   <th><?= $this->lang->line('tax'); ?></th>
@@ -184,11 +185,11 @@
                     multi_delete();
                 }
             },
-            { extend: 'copy', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11]} },
-            { extend: 'excel', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11]} },
-            { extend: 'pdf', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11]} },
-            { extend: 'print', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11]} },
-            { extend: 'csv', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11]} },
+            { extend: 'copy', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11,12]} },
+            { extend: 'excel', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11,12]} },
+            { extend: 'pdf', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11,12]} },
+            { extend: 'print', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11,12]} },
+            { extend: 'csv', className: 'btn bg-teal color-palette btn-flat',exportOptions: { columns: [2,3,4,5,6,7,8,9,10,11,12]} },
             { extend: 'colvis', className: 'btn bg-teal color-palette btn-flat',text:'Columns' },  
 
             ]
@@ -226,7 +227,7 @@
         //Set column definition initialisation properties.
         "columnDefs": [
         { 
-            "targets": [ 0,12 ], //first column / numbering column
+            "targets": [ 0,13 ], //first column / numbering column
             "orderable": false, //set not orderable
         },
         {
