@@ -541,9 +541,9 @@ $CI = &get_instance();
       <?php } ?><!-- is_user() -->
 
       <?php if (!is_user()) { ?>
-        <?php if ($CI->permissions('services_add') || $CI->permissions('services_view') || $CI->permissions('items_add') || $CI->permissions('items_view') || $CI->permissions('items_category_add') || $CI->permissions('items_category_view') || $CI->permissions('brand_add') || $CI->permissions('brand_view') || $CI->permissions('print_labels') || $CI->permissions('import_items') || $CI->permissions('import_services') || $CI->permissions('variant_view') || $CI->permissions('services_view') || $CI->permissions('units_view')) { ?>
+        <?php if ($CI->permissions('services_add') || $CI->permissions('services_view') || $CI->permissions('items_add') || $CI->permissions('items_view') || $CI->permissions('items_category_add') || $CI->permissions('items_category_view') || $CI->permissions('brand_add') || $CI->permissions('brand_view') || $CI->permissions('print_labels') || $CI->permissions('import_items') || $CI->permissions('import_services') || $CI->permissions('variant_view') || $CI->permissions('services_view')) { ?>
           <!-- <li class="header">MAIN</li> -->
-          <li class="items-list-active-li items-active-li  category-view-active-li category-active-li brand-active-li brand-view-active-li labels-active-li import_items-active-li services-active-li import_services-active-li variants-active-li variants_list-active-li services-active-li units-list-active-li unit-active-li treeview">
+          <li class="items-list-active-li items-active-li  category-view-active-li category-active-li brand-active-li brand-view-active-li labels-active-li import_items-active-li services-active-li import_services-active-li variants-active-li variants_list-active-li services-active-li treeview">
             <a href="#">
               <i class="fa fa-cubes text-aqua"></i> <span><?= (service_module()) ? $this->lang->line('items') : $this->lang->line('items'); ?></span>
               <span class="pull-right-container">
@@ -582,9 +582,6 @@ $CI = &get_instance();
 
               <li class="subcategory-view-active-li"><a href="<?php echo $base_url; ?>Bscategory/view"><i class="fa fa-list "></i> <span>Sub-Bin List</span></a></li>
 
-              <?php if ($CI->permissions('units_view')) { ?>
-                <li class="units-list-active-li unit-active-li"><a href="<?php echo $base_url; ?>units/"><i class="fa fa-list "></i> <span><?= $this->lang->line('units_list'); ?></span></a></li>
-              <?php } ?>
 
               <?php if ($CI->permissions('brand_view')) { ?>
                 <li class="brand-view-active-li"><a href="<?php echo $base_url; ?>brands/view"><i class="fa fa-list "></i> <span><?= $this->lang->line('brands_list'); ?></span></a></li>
@@ -880,7 +877,7 @@ $CI = &get_instance();
 
       <!--<li class="header">SETTINGS</li>-->
       <?php if ($change_password = true) { ?>
-        <li class=" site-settings-active-li  change-pass-active-li dbbackup-active-li  tax-active-li currency-view-active-li  store_profile-active-li currency-active-li  database_updater-active-li tax-list-active-li payment_types_list-active-li payment_types-active-li gateways-active-li package-active-li subscription-active-li  subscription-list-active-li  package-list-active-li sms-api-active-li smtp-active-li treeview">
+        <li class=" site-settings-active-li  change-pass-active-li dbbackup-active-li  tax-active-li currency-view-active-li  store_profile-active-li currency-active-li  database_updater-active-li tax-list-active-li units-list-active-li unit-active-li payment_types_list-active-li payment_types-active-li gateways-active-li package-active-li subscription-active-li  subscription-list-active-li  package-list-active-li sms-api-active-li smtp-active-li treeview">
           <a href="#">
             <i class="fa fa-gears text-aqua"></i> <span><?= $this->lang->line('settings'); ?></span>
             <span class="pull-right-container">
@@ -931,7 +928,9 @@ $CI = &get_instance();
                 <li class="tax-active-li  tax-list-active-li"><a href="<?php echo $base_url; ?>tax"><i class="fa fa-percent  "></i> <span><?= $this->lang->line('tax_list'); ?></span>
                   </a></li>
               <?php } ?>
-
+              <?php if ($CI->permissions('units_view')) { ?>
+                <li class="units-list-active-li unit-active-li"><a href="<?php echo $base_url; ?>units/"><i class="fa fa-list "></i> <span><?= $this->lang->line('units_list'); ?></span></a></li>
+              <?php } ?>
 
               <?php if ($CI->permissions('payment_types_view')) { ?>
                 <li class="payment_types_list-active-li payment_types-active-li"><a href="<?php echo $base_url; ?>payment_types/"><i class="fa fa-list "></i> <span><?= $this->lang->line('payment_types'); ?></span>
