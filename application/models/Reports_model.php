@@ -1933,6 +1933,7 @@ class Reports_model extends CI_Model {
 								->where("purchase_id",$res1->id)->get("db_purchaseitems")->row();
 				$tax_amt = $q2->tax_amt;
 				$discount_amt = $q2->discount_amt;
+				$discount_amt += (isset($res1->tot_discount_to_all_amt) ? $res1->tot_discount_to_all_amt : 0);
 				$price_per_unit = $q2->price_per_unit;
 
 				echo "<tr>";
@@ -2193,6 +2194,7 @@ class Reports_model extends CI_Model {
 								->where("purchase_id",$res1->id)->get("db_purchaseitems")->row();
 				$tax_amt = $q2->tax_amt;
 				$discount_amt = $q2->discount_amt;
+				$discount_amt += (isset($res1->tot_discount_to_all_amt) ? $res1->tot_discount_to_all_amt : 0);
 				$price_per_unit = $q2->price_per_unit;
 
 
