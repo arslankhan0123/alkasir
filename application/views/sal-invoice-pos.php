@@ -197,11 +197,25 @@
 
                     -->
 
-                    <!-- Static AL KASIR header -->
-                    <strong style="font-size: 22px;">AL KASIR</strong><br>
-                    <strong style="font-size: 11px;">MOBILE PHONE &amp; COMPUTER TR. LLC SP</strong><br>
-                    <span style="font-weight: normal;">Al Majaz-2, Jamal Abdul Nasser Street, SharJah, UAE</span><br>
-                    <span style="font-weight: normal;">Mob.: 055 617 3300, 056 477 2300</span><br>
+                    <!-- Dynamic Header -->
+                    <?php 
+                        $dynamic_store_name = strtoupper($store_name);
+                        $dynamic_store_name = str_replace('&AMP;', '&amp;', $dynamic_store_name);
+                        $dynamic_address = $company_address;
+                        if (!empty($company_city)) {
+                            $dynamic_address .= ', ' . $company_city;
+                        }
+                        $dynamic_phones = [];
+                        if(!empty($company_mobile)) $dynamic_phones[] = $company_mobile;
+                        if(!empty($company_phone)) $dynamic_phones[] = $company_phone;
+                        $dynamic_phone_str = implode(", ", $dynamic_phones);
+                    ?>
+                    <strong style="font-size: 22px;"><?= $dynamic_store_name ?></strong><br>
+                    <?php if(!empty($company_email)): ?>
+                        <strong style="font-size: 11px;">Email: <?= $company_email ?></strong><br>
+                    <?php endif; ?>
+                    <span style="font-weight: normal;"><?= $dynamic_address ?></span><br>
+                    <span style="font-weight: normal;">Mob.: <?= $dynamic_phone_str ?></span><br>
                     <span style="font-weight: normal;">TRN: <?= $company_vat_number ?></span><br>
                     <hr>
                     <strong style="display: inline-block; margin-bottom: 6px;">TAX INVOICE</strong>

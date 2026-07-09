@@ -230,58 +230,34 @@ class MyPDF extends TCPDF {
         $store = $this->store;
         $warehouse = $this->warehouse;
 
-        /* Original AlRahmania header - disabled, replaced with static AL KASIR details below
-
-        if($warehouse->mobile == "") $warehouse->mobile = "+971 558674927,+971 557502083";
-        if($warehouse->email == "") $warehouse->email = "alrahmaniah27@gmail.com";
-
-        $txt='';
-
-        $txt .= '<span style="font-size:22px;font-weight:500;"><b>'.$store->store_name.'</b></span>';
-
-        $this->writeHTMLCell($w =155, $h='', $x='58', $y='16', $txt, $border = 0, 0, 0, true, '', true);
-
-        $txt = "";
-        $txt .= '<br><span style="font-size:16px;">Al Khan Road, Industrial Area 1, Sharjah , UAE</span>';
-
-        $this->setFont($this->get_font_name(), '', 14, '', true);
-
-        $this->writeHTMLCell($w =155, $h='', $x='62', $y='24', $txt, $border = 0, 0, 0, true, '', true);
-
-        $titleHTML = "";
-        $titleHTML .= '<span style="font-size:14px;">Mobile</span>';
-        $titleHTML .= '<br/><span style="font-size:14px;">Email</span>';
-        $titleHTML .= '<br/><span style="font-size:14px;">Website</span>';
-
-        $this->setFont($this->get_font_name(), '', 14, '', true);
-
-        $this->writeHTMLCell($w =155, $h='', $x='62', $y='28', $titleHTML, $border = 0, 0, 0, true, '', true);
-
-        $infoHTML = "";
-        $infoHTML .= '<span style="font-size:14px;">: '.$warehouse->mobile.'</span><br/>';
-        $infoHTML .= '<span style="font-size:14px;">: '.$warehouse->email.'</span><br/>';
-        $infoHTML .= '<span style="font-size:14px;">: www.alrahmaniahautouae.com</span>';
-
-        $this->setFont($this->get_font_name(), '', 14, '', true);
-
-        $this->writeHTMLCell($w =135, $h='', $x='80', $y='28', $infoHTML, $border = 0, 0, 0, true, '', true);
-
-        */
-
-        // Static AL KASIR header - centered across page width, logo stays on left
+        // Dynamic header - centered across page width, logo stays on left
         $this->setFont($this->get_font_name(), '', 14, '', true);
         $pageWidth = $this->getPageWidth();
 
-        $txt = '<span style="font-size:22px;font-weight:bold;">AL KASIR</span>';
+        $store_name = strtoupper($store->store_name);
+        $store_name = str_replace('&AMP;', '&amp;', $store_name);
+
+        $txt = '<span style="font-size:22px;font-weight:bold;">'.$store_name.'</span>';
         $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='14', $txt, $border = 0, 0, 0, true, 'C', true);
 
-        $txt = '<span style="font-size:13px;font-weight:bold;">MOBILE PHONE &amp; COMPUTER TR. LLC SP</span>';
-        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='21', $txt, $border = 0, 0, 0, true, 'C', true);
+        $email_txt = '';
+        if(!empty($store->email)){
+            $email_txt = '<span style="font-size:13px;font-weight:bold;">Email: '.$store->email.'</span>';
+        }
+        $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='21', $email_txt, $border = 0, 0, 0, true, 'C', true);
 
-        $txt = '<span style="font-size:12px;">Al Majaz-2, Jamal Abdul Nasser Street, SharJah, UAE</span>';
+        $address_txt = $store->address;
+        if(!empty($store->city)){
+            $address_txt .= ', '.$store->city;
+        }
+        $txt = '<span style="font-size:12px;">'.$address_txt.'</span>';
         $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='27', $txt, $border = 0, 0, 0, true, 'C', true);
 
-        $txt = '<span style="font-size:12px;">Mob.: 055 617 3300, 056 477 2300</span>';
+        $phones = [];
+        if(!empty($store->mobile)) $phones[] = $store->mobile;
+        if(!empty($store->phone)) $phones[] = $store->phone;
+        $phone_str = implode(", ", $phones);
+        $txt = '<span style="font-size:12px;">Mob.: '.$phone_str.'</span>';
         $this->writeHTMLCell($w =$pageWidth, $h='', $x=0, $y='32', $txt, $border = 0, 0, 0, true, 'C', true);
 
         return $this;
