@@ -23,3 +23,5 @@ ERROR - 2026-07-09 18:30:52 --> Could not find the language line "company_addres
 ERROR - 2026-07-09 18:31:13 --> Could not find the language line "company_address"
 ERROR - 2026-07-09 18:31:19 --> Could not find the language line "company_address"
 ERROR - 2026-07-09 18:34:05 --> Could not find the language line "company_address"
+ERROR - 2026-07-09 14:43:39 --> 404 Page Not Found: Permission/index
+ERROR - 2026-07-09 14:43:42 --> 404 Page Not Found: Permissions/index
